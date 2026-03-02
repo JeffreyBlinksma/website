@@ -1,0 +1,73 @@
+body {
+    /* Declare variables */
+    --bg-colour: #FFFFDD;
+    --fg-colour: #000000;
+    --sidebar-width: 200px;
+    --content-width: 700px;
+
+    background-color: var(--bg-colour);
+    color: var(--fg-colour);
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0 auto;
+    display: flex;
+    width: calc(var(--content-width) + var(--sidebar-width) + 3rem);
+}
+
+aside {
+    height: 100vh;
+    max-width: var(--sidebar-width);
+    border-right-color: var(--fg-colour);
+    border-right-style: solid;
+    border-right-width: 1px;
+    padding: 0 1rem;
+}
+
+aside h1 {
+    text-align: center;
+    font-size: 18pt;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    max-width: var(--content-width);
+    margin-left: 2rem;
+}
+
+main h1 {
+    margin-bottom: 0;
+}
+
+.subtitle {
+    margin-top: 0;
+}
+
+.twocolumn {
+    display: flex;
+    width: var(--content-width);
+    justify-content: space-around;
+}
+
+.twocolumn div {
+    width: calc((var(--content-width) - 100px) / 2);
+}
+
+.twocolumn div h2, .twocolumn div h3 {
+    text-align: center;
+}
+
+.coverbox {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+}
+
+.coverbox img {
+    height: 100px;
+    width: 100px;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
