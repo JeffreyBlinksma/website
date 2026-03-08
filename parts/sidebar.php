@@ -14,7 +14,7 @@
         <nav>
             <a href="/">Home</a>
             <a href="">About me</a>
-            <a href="">Notes</a>
+            <a href="">Posts</a>
             <a href="/gear/">Gear</a>
             <a href="">Places visited</a>
             <?php

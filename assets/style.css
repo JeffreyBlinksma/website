@@ -71,3 +71,24 @@ main h1 {
     border: 0;
     padding: 0;
 }
+
+.post {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: space-between;
+}
+
+.post .title {
+    text-align: left;
+    grid-column: 1;
+    margin: 0;
+}
+
+.post time {
+    text-align: right;
+    grid-column: 2;
+}
+
+.post .description {
+    grid-column: 1 / span 2;
+}
