@@ -45,9 +45,5 @@ else
 {
     echo "<p>There's nothing here yet 😔</p>";
 }
-
-
-
-
 ?>
 </section>
