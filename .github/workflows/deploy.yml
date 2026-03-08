@@ -1,0 +1,24 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - staging
+  workflow_dispatch:
+
+jobs:
+  deploy-staging:
+    name: "Deploy staging branch"
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v6
+      - name: "Deploy"
+        uses: milanmk/actions-file-deployer@master
+        with:
+          remote-protocol: "sftp"
+          remote-host: ${{ vars.HOST }}
+          remote-user: ${{ vars.USERNAME }}
+          ssh-private-key: ${{ secrets.PRIVATE_KEY }}
+          remote-path: ${{ vars.PATH }}
