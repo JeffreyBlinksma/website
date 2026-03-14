@@ -49,7 +49,7 @@
                     <?php
                         $art = array_diff(scandir($_SERVER['DOCUMENT_ROOT'].'/assets/coverart'), array('..', '.'));
                         foreach ($art as $file) {
-                            echo "<img src='/assets/coverart/'".$file.".webp' alt='' loading='lazy'>";
+                            echo "<img src='/assets/coverart/".$file."' alt='' loading='lazy'>";
                         }
                     ?>
                 </div>
