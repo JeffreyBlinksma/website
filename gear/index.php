@@ -2,14 +2,14 @@
 <html lang="en">
     <head>
         <?php
-        require("../parts/meta.php");
+        require($_SERVER['DOCUMENT_ROOT']."/parts/meta.php");
         ?>
         <title>Jeffrey Blinksma</title>
-        <link rel="stylesheet" href="../assets/style.css">
+        <link rel="stylesheet" href="/assets/style.css">
     </head>
     <body>
         <?php
-        require("../parts/sidebar.php");
+        require($_SERVER['DOCUMENT_ROOT']."/parts/sidebar.php");
         ?>
         <main>
             <h1>Gear</h1>
