@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require __DIR__.'/vendor/autoload.php';
 $existingArt = array_diff(scandir(__DIR__.'/assets/coverart'), array('..', '.'));
 $existingArt = str_replace('.webp', '', $existingArt);
 $newArt = array();
