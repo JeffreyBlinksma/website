@@ -47,7 +47,7 @@
                 
                 <div class="coverbox">
                     <?php
-                        $art = array_diff(scandir($_SERVER['DOCUMENT_ROOT'].'/assets/coverart'), array('..', '.'));
+                        $art = array_diff(scandir($_SERVER['DOCUMENT_ROOT'].'/assets/coverart'), array('..', '.', '.gitignore'));
                         foreach ($art as $file) {
                             echo "<img src='/assets/coverart/".$file."' alt='' loading='lazy'>";
                         }
