@@ -43,7 +43,7 @@ if ($posts != [])
 }
 else
 {
-    echo "<p>There's nothing here yet 😔</p>";
+    echo "<p>There's nothing here 😔</p>";
 }
 ?>
 </section>

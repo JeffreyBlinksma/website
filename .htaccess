@@ -6,3 +6,7 @@
     Order Allow,Deny
     Deny from all
 </Files>
+<Files "coverart-updater.php">
+    Order Allow,Deny
+    Deny from all
+</Files>

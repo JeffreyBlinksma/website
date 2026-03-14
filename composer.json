@@ -1,0 +1,6 @@
+{
+    "require": {
+        "guzzlehttp/guzzle": "^7.10",
+        "composer/ca-bundle": "^1.5"
+    }
+}

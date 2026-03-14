@@ -2,6 +2,7 @@ body {
     /* Declare variables */
     --bg-colour: #FFFFDD;
     --fg-colour: #000000;
+    --highlight-colour: #BF0077;
     --sidebar-width: 200px;
     --content-width: 700px;
 
@@ -41,6 +42,10 @@ main h1 {
     margin-bottom: 0;
 }
 
+a {
+    color: var(--highlight-colour);
+}
+
 .subtitle {
     margin-top: 0;
 }
@@ -76,12 +81,22 @@ main h1 {
     display: grid;
     grid-template-columns: 1fr auto;
     justify-content: space-between;
+    color: var(--fg-colour);
+    text-decoration: none;
+    border-bottom: 1px solid var(--fg-colour);
+    padding: 8px;
+}
+
+.post:last-child {
+    border-bottom: none;
 }
 
 .post .title {
     text-align: left;
     grid-column: 1;
     margin: 0;
+    font-weight: bold;
+    color: var(--highlight-colour);
 }
 
 .post time {
@@ -91,4 +106,5 @@ main h1 {
 
 .post .description {
     grid-column: 1 / span 2;
+    margin: 0;
 }
