@@ -8,7 +8,7 @@ $lbClient = new GuzzleHttp\Client(['base_uri' => 'https://api.listenbrainz.org/1
 $caaClient = new GuzzleHttp\Client(['base_uri' => 'https://coverartarchive.org/release/', \GuzzleHttp\RequestOptions::VERIFY => \Composer\CaBundle\CaBundle::getSystemCaRootBundlePath()]);
 echo("Getting listens...\n");
 try {
-    $response = $lbClient->request('GET', 'user/jblinksma/listens');
+    $response = $lbClient->request('GET', 'user/jblinksma/listens', ['query' => ['count' => '100']]);
 } catch (\GuzzleHttp\Exception\GuzzleException $e) {
     var_dump($e->getMessage());
     exit();
