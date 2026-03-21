@@ -11,21 +11,29 @@ body {
     font-family: 'Times New Roman', Times, serif;
     margin: 0 auto;
     display: flex;
-    width: calc(var(--content-width) + var(--sidebar-width) + 3rem);
+    width: calc(var(--content-width) + var(--sidebar-width) + 4rem + 1px);
 }
 
 aside {
     height: 100vh;
-    max-width: var(--sidebar-width);
+    width: var(--sidebar-width);
     border-right-color: var(--fg-colour);
     border-right-style: solid;
     border-right-width: 1px;
     padding: 0 1rem;
+    position: sticky;
+    top: 0;
 }
 
 aside h1 {
     text-align: center;
     font-size: 18pt;
+}
+
+aside .footer {
+    position: fixed;
+    bottom: 0;
+    width: var(--sidebar-width);
 }
 
 nav {
@@ -34,7 +42,7 @@ nav {
 }
 
 main {
-    max-width: var(--content-width);
+    width: var(--content-width);
     margin-left: 2rem;
 }
 
