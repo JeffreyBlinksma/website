@@ -91,7 +91,7 @@ require($_SERVER['DOCUMENT_ROOT']."/parts/sidebar.php");
                     (2026/03)
                 </span>
             </h3>
-            <p>blep blep blep</p>
+            <p>Polling station member for the 2026 municipal election in the Netherlands. Under the supervision of the chairperson, I was responsible for the verification of voter's identities and voter cards, the issuance of ballots, and supervision of the voting process. </p>
         </div>
         <div class="work-entry">
             <h3>
