@@ -2,6 +2,7 @@ body {
     /* Declare variables */
     --bg-colour: #FFFFDD;
     --fg-colour: #000000;
+    --secondary-colour: #CCCCCC;
     --highlight-colour: #BF0077;
     --sidebar-width: 200px;
     --content-width: 700px;
@@ -52,6 +53,22 @@ main h1 {
 
 a {
     color: var(--highlight-colour);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: 1px solid var(--secondary-colour);
+}
+
+tr:last-child {
+    border-bottom: none;
+}
+
+th {
+    padding-right: 1rem;
 }
 
 .subtitle {
@@ -115,4 +132,57 @@ a {
 .post .description {
     grid-column: 1 / span 2;
     margin: 0;
+}
+
+.work-entry h3 {
+    margin-bottom: 0.5em;
+    border-bottom-style: dotted;
+    border-bottom-width: 2px;
+}
+
+.work-entry h3 a {
+    color: var(--fg-colour);
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 0.875em;
+}
+
+.work-entry .timespan {
+    font-weight: normal;
+    font-size: 0.65em;
+}
+
+.work-entry p {
+    margin-top: 0;
+}
+
+/* I would like to replace the following with something that automatically iterates through this, but I don't know how yet. */
+.ul-purple {
+    border-bottom-style: solid;
+    border-bottom-color: #BF0077;
+}
+
+.ul-blue {
+    border-bottom-style: solid;
+    border-bottom-color: #008DD5;
+}
+
+.ul-green {
+    border-bottom-style: solid;
+    border-bottom-color: #0B6E4F;
+}
+
+.ul-yellow {
+    border-bottom-style: solid;
+    border-bottom-color: #FFF000;
+}
+
+.ul-orange {
+    border-bottom-style: solid;
+    border-bottom-color: #FFA500;
+}
+
+.ul-red {
+    border-bottom-style: solid;
+    border-bottom-color: #A31621;
 }
