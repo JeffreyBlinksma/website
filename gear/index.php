@@ -16,8 +16,8 @@
             <p class="subtitle"><i>if it ain't broken don't fix it</i></p>
             <p>This is an (unfinished) list of the hardware that I use on a regular basis. It encompasses everything from my computer setup to my networking gear and even my work tools.</p>
             
-            <h2>Personal</h2>
-                <h3>Workspace</h3>
+            <h2 class="ul-blue">Personal</h2>
+                <h3 class="ul-green">Workspace</h3>
                 <table>
                     <tr>
                         <th>Computer</th>
@@ -56,7 +56,7 @@
                     </tr>
                 </table>
             
-                <h3>Portable</h3>
+                <h3 class="ul-yellow">Portable</h3>
                 <table>
                     <tr>
                         <th>Cellphone</th>

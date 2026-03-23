@@ -6,13 +6,20 @@ body {
     --highlight-colour: #BF0077;
     --sidebar-width: 200px;
     --content-width: 700px;
+    --preferred-page-width: calc(var(--content-width) + var(--sidebar-width) + 4rem + 1px);
 
     background-color: var(--bg-colour);
     color: var(--fg-colour);
     font-family: 'Times New Roman', Times, serif;
     margin: 0 auto;
-    display: flex;
-    width: calc(var(--content-width) + var(--sidebar-width) + 4rem + 1px);
+}
+
+@media (min-width: var(--preferred-page-width)) {
+    body {
+        display: flex;
+        width: calc(var(--content-width) + var(--sidebar-width) + 4rem + 1px);
+
+    }
 }
 
 aside {

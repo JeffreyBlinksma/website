@@ -4,7 +4,7 @@
     <?php
     require($_SERVER['DOCUMENT_ROOT']."/parts/meta.php");
     ?>
-    <title>Jeffrey Blinksma</title>
+    <title>Posts | Jeffrey Blinksma</title>
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
