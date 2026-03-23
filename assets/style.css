@@ -4,9 +4,9 @@ body {
     --fg-colour: #000000;
     --secondary-colour: #CCCCCC;
     --highlight-colour: #BF0077;
-    --sidebar-width: 200px;
-    --content-width: 700px;
-    --preferred-page-width: calc(var(--content-width) + var(--sidebar-width) + 4rem + 1px);
+    --sidebar-width: 12.5rem;
+    --content-width: 43.75rem;
+    --preferred-page-width: calc(var(--content-width) + var(--sidebar-width) + 4rem + 0.0625rem);
 
     background-color: var(--bg-colour);
     color: var(--fg-colour);
@@ -14,10 +14,10 @@ body {
     margin: 0 auto;
 }
 
-@media (min-width: var(--preferred-page-width)) {
+@media (min-width: 60.3125rem) {
     body {
         display: flex;
-        width: calc(var(--content-width) + var(--sidebar-width) + 4rem + 1px);
+        width: calc(var(--content-width) + var(--sidebar-width) + 4rem + 0.0625rem);
 
     }
 }
@@ -27,7 +27,7 @@ aside {
     width: var(--sidebar-width);
     border-right-color: var(--fg-colour);
     border-right-style: solid;
-    border-right-width: 1px;
+    border-right-width: 0.0625rem;
     padding: 0 1rem;
     position: sticky;
     top: 0;
@@ -67,7 +67,7 @@ table {
 }
 
 tr {
-    border-bottom: 1px solid var(--secondary-colour);
+    border-bottom: 0.0625 solid var(--secondary-colour);
 }
 
 tr:last-child {
@@ -89,7 +89,7 @@ th {
 }
 
 .twocolumn div {
-    width: calc((var(--content-width) - 100px) / 2);
+    width: calc((var(--content-width) - 6.25rem) / 2);
 }
 
 .twocolumn div h2, .twocolumn div h3 {
@@ -98,12 +98,12 @@ th {
 
 .coverbox {
     display: grid;
-    grid-template-columns: 100px 100px 100px;
+    grid-template-columns: 6.25rem 6.25rem 6.25rem;
 }
 
 .coverbox img {
-    height: 100px;
-    width: 100px;
+    height: 6.25rem;
+    width: 6.25rem;
     margin: 0;
     border: 0;
     padding: 0;
@@ -115,8 +115,8 @@ th {
     justify-content: space-between;
     color: var(--fg-colour);
     text-decoration: none;
-    border-bottom: 1px solid var(--fg-colour);
-    padding: 8px;
+    border-bottom: 0.0625rem solid var(--fg-colour);
+    padding: 0.5rem;
 }
 
 .post:last-child {
@@ -144,7 +144,7 @@ th {
 .work-entry h3 {
     margin-bottom: 0.5em;
     border-bottom-style: dotted;
-    border-bottom-width: 2px;
+    border-bottom-width: 0.125rem;
 }
 
 .work-entry h3 a {
