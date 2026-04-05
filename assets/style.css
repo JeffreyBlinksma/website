@@ -14,23 +14,164 @@ body {
     margin: 0 auto;
 }
 
-@media (min-width: 60.3125rem) {
+@media (width >= 61.3125rem) /* add 1rem for scrollbar */ {
     body {
         display: flex;
         width: calc(var(--content-width) + var(--sidebar-width) + 4rem + 0.0625rem);
-
+    }
+    aside {
+        display: block;
+        height: 100vh;
+        border-right-color: var(--fg-colour);
+        border-right-style: solid;
+        border-right-width: 0.0625rem;
+        padding: 0 1rem;
+        position: sticky;
+        top: 0;
+    }
+    .menu-button {
+        display: none;
+    }
+    nav {
+        flex-direction: column;
+    }
+    main {
+        margin-left: 2rem;
+        width: var(--content-width);
+    }
+    .twocolumn {
+        display: flex;
+        width: var(--content-width);
+    }
+    footer {
+        display: none;
     }
 }
 
-aside {
-    height: 100vh;
-    width: var(--sidebar-width);
-    border-right-color: var(--fg-colour);
-    border-right-style: solid;
-    border-right-width: 0.0625rem;
-    padding: 0 1rem;
-    position: sticky;
-    top: 0;
+@media (45.75rem <= width < 61.3125rem)  {
+    body {
+        width: calc(var(--content-width) + 2rem);
+        margin-top: 1rem;
+    }
+    aside {
+        display: block flex;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom-color: var(--fg-colour);
+        border-bottom-style: solid;
+        border-bottom-width: 0.0625rem;
+    }
+    aside h1 {
+        margin: 0 1rem 0 0;
+    }
+    .menu-button {
+        display: none;
+    }
+    aside section:nth-child(2) {
+        display: flex;
+        align-items: center;
+    }
+    nav {
+        flex-direction: row;
+        margin: auto 0;
+    }
+    nav a {
+        border-right-color: var(--fg-colour);
+        border-right-style: solid;
+        border-right-width: 0.0625rem;
+        padding: 0 0.5rem;
+    }
+    nav a:last-child {
+        border-right: none;
+    }
+    aside .footer {
+        display: none;
+    }
+    main {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        width: var(--content-width);
+    }
+    main h1 {
+        margin-top: 0.25em;
+    }
+    .twocolumn {
+        display: flex;
+        width: var(--content-width);
+    }
+    footer {
+        display: none;
+    }
+}
+
+@media (width < 45.75rem) {
+    body {
+        width: calc(var(--content-width) / 2);
+    }
+    aside {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        display: block flex;
+        flex-direction: column;
+        padding-bottom: 0.5rem;
+        border-bottom-color: var(--fg-colour);
+        border-bottom-style: solid;
+        border-bottom-width: 0.0625rem;
+    }
+    aside section:nth-child(1) {
+        display: flex;
+        align-items: center;
+    }
+    aside h1 {
+        margin: 0 auto;
+    }
+    .menu-button {
+        display: flex;
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: 0.5rem;
+        border-color: var(--highlight-colour);
+        border-width: 0.125rem;
+        border-style: solid;
+        align-items: center;
+        background-color: transparent;
+        color: var(--highlight-colour);
+        margin: 0.25rem;
+    }
+    .menu-button svg {
+        display: block;
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+    aside .footer {
+        display: none;
+    }
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    main {
+        width: auto;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    main h1 {
+        margin-top: 0.25em;
+    }
+    .twocolumn {
+        width: calc((var(--content-width) - 6.25rem) / 2);
+        margin: 0 auto;
+    }
+    footer {
+        width: calc(6.25rem * 3);
+        margin: 0 auto;
+        padding-top: 0.25rem;
+        border-top-color: var(--fg-colour);
+        border-top-style: solid;
+        border-top-width: 0.0625rem;
+        text-align: center;
+    }
 }
 
 aside h1 {
@@ -40,18 +181,12 @@ aside h1 {
 
 aside .footer {
     position: fixed;
-    bottom: 0;
+    bottom: 0.5rem;
     width: var(--sidebar-width);
 }
 
 nav {
     display: flex;
-    flex-direction: column;
-}
-
-main {
-    width: var(--content-width);
-    margin-left: 2rem;
 }
 
 main h1 {
@@ -83,13 +218,12 @@ th {
 }
 
 .twocolumn {
-    display: flex;
-    width: var(--content-width);
     justify-content: space-around;
 }
 
 .twocolumn div {
     width: calc((var(--content-width) - 6.25rem) / 2);
+    margin-bottom: 1rem;
 }
 
 .twocolumn div h2, .twocolumn div h3 {
