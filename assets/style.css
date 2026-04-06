@@ -29,7 +29,7 @@ body {
         position: sticky;
         top: 0;
     }
-    .menu-button {
+    #menu-button {
         display: none;
     }
     nav {
@@ -65,7 +65,7 @@ body {
     aside h1 {
         margin: 0 1rem 0 0;
     }
-    .menu-button {
+    #menu-button {
         display: none;
     }
     aside section:nth-child(2) {
@@ -126,7 +126,7 @@ body {
     aside h1 {
         margin: 0 auto;
     }
-    .menu-button {
+    #menu-button {
         display: flex;
         height: 1.5rem;
         width: 1.5rem;
@@ -139,7 +139,7 @@ body {
         color: var(--highlight-colour);
         margin: 0.25rem;
     }
-    .menu-button svg {
+    #menu-button svg {
         display: block;
         width: 1.25rem;
         height: 1.25rem;
@@ -150,6 +150,24 @@ body {
     nav {
         flex-direction: column;
         text-align: center;
+    }
+    nav a {
+        scale: 1 0;
+        height: 0;
+    }
+    nav a.open {
+        animation-duration: 1s;
+        animation-name: menu-open;
+        animation-iteration-count: 1;
+        scale: 1 1;
+        height: 1.125rem;
+    }
+    nav a.close {
+        animation-duration: 1s;
+        animation-name: menu-close;
+        animation-iteration-count: 1;
+        scale: 1 0;
+        height: 0;
     }
     main {
         width: auto;
@@ -326,4 +344,26 @@ th {
 .ul-red {
     border-bottom-style: solid;
     border-bottom-color: #A31621;
+}
+
+@keyframes menu-open {
+    from {
+        scale: 1 0;
+        height: 0;
+    }
+    to {
+        scale: 1 1;
+        height: 1.125rem;
+    }
+}
+
+@keyframes menu-close {
+    from {
+        scale: 1 1;
+        height: 1.125rem;
+    }
+    to {
+        scale: 1 0;
+        height: 0;
+    }
 }
