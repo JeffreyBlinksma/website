@@ -209,7 +209,7 @@ body {
     }
     #map {
         width: auto;
-        height: calc(100vh - 2.25rem - 2.5625rem - 2.8125rem)
+        height: calc(100svh - 2.25rem - 2.5625rem - 2.8125rem)
     }
 }
 
