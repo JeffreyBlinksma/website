@@ -7,3 +7,4 @@ if (file_exists($_SERVER['DOCUMENT_ROOT']."/.deploy-revision")) {
     echo "No commit hash (running local?)";
 }
 ?>
+
