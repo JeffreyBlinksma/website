@@ -45,7 +45,13 @@
                     }
                 }
 
-                map.fitBounds(bounds);
+                function fit() {
+                    map.fitBounds(bounds);
+                }
+
+                fit();
+
+                map.addEventListener('resize', fit);
             </script>
         </main>
         <footer>

@@ -46,6 +46,10 @@ body {
     footer {
         display: none;
     }
+    #map {
+        width: var(--content-width);
+        height: var(--content-width);
+    }
 }
 
 @media (45.75rem <= width < 61.3125rem)  {
@@ -101,7 +105,17 @@ body {
         width: var(--content-width);
     }
     footer {
-        display: none;
+        width: var(--content-width);
+        margin: 0 auto;
+        padding-top: 0.25rem;
+        border-top-color: var(--fg-colour);
+        border-top-style: solid;
+        border-top-width: 0.0625rem;
+        text-align: center;
+    }
+    #map {
+        width: var(--content-width);
+        height: var(--content-width);
     }
 }
 
@@ -192,6 +206,10 @@ body {
         border-top-style: solid;
         border-top-width: 0.0625rem;
         text-align: center;
+    }
+    #map {
+        width: auto;
+        height: calc(100vh - 2.25rem - 2.5625rem - 2.8125rem)
     }
 }
 
@@ -351,11 +369,6 @@ table.gear th {
 
 .indent-1 {
     margin-left: 1rem;
-}
-
-#map {
-    width: var(--content-width);
-    height: var(--content-width);
 }
 
 @keyframes menu-open {
