@@ -14,18 +14,18 @@
         <main>
             <h1>Gear</h1>
             <p class="subtitle"><i>if it ain't broken don't fix it</i></p>
-            <p>This is an (unfinished) list of the hardware that I use on a regular basis. It encompasses everything from my computer setup to my networking gear and even my work tools.</p>
+            <p>This is an (unfinished) list of the hardware that I use on a regular basis. It will encompass everything from my computer setup to my networking gear and even my work tools.</p>
             
             <h2 class="ul-blue">Personal</h2>
-                <h3 class="ul-green">Workspace</h3>
-                <table>
+                <h3 class="ul-green indent-1">Workspace</h3>
+                <table class="gear indent-1">
                     <tr>
                         <th>Computer</th>
-                        <td>Queen</td>
+                        <td><a href="workspace/queen/">Queen</a></td>
                     </tr>
                     <tr>
                         <th rowspan="2">Monitor</th>
-                        <td>Samsung LU28R550UQUXEN</td>
+                        <td>Samsung LU28R55</td>
                     </tr>
                     <tr>
                         <td>AOC G2460VQ6</td>
@@ -39,12 +39,19 @@
                         <td>Logitech MX Ergo</td>
                     </tr>
                     <tr>
+                        <th>Controller</th>
+                        <td>Google Stadia Controller w/ Bluetooth firmware</td>
+                    </tr>
+                    <tr>
                         <th>Webcam</th>
                         <td>Lenovo 510 FHD</td>
                     </tr>
                     <tr>
-                        <th>Telephone</th>
+                        <th rowspan="2">Telephone</th>
                         <td>Cisco 7940</td>
+                    </tr>
+                    <tr>
+                        <td>Cisco SPA508G</td>
                     </tr>
                     <tr>
                         <th>Table</th>
@@ -56,8 +63,8 @@
                     </tr>
                 </table>
             
-                <h3 class="ul-yellow">Portable</h3>
-                <table>
+                <h3 class="ul-yellow indent-1">Portable</h3>
+                <table class="gear indent-1">
                     <tr>
                         <th>Cellphone</th>
                         <td>Apple iPhone 17 Pro</td>
@@ -81,8 +88,31 @@
                         <td>Sony WF-1000XM4</td>
                     </tr>
                     <tr>
+                        <th rowspan="2">Laptop</th>
+                        <td>Microsoft Surface Go</td>
+                    </tr>
+                    <tr>
+                        <td>Lenovo Thinkpad T15 Gen 2</td>
+                    </tr>
+                    <tr>
                         <th>Wallet</th>
                         <td>Secrid Miniwallet Matte Black</td>
+                    </tr>
+                </table>
+            <h2 class="ul-orange">Work</h2>
+                <h3 class="ul-red indent-1">Portable</h3>
+                <table class="gear indent-1">
+                    <tr>
+                        <th>Laptop</th>
+                        <td>HP ProBook 460 G11</td>
+                    </tr>
+                    <tr>
+                        <th>Cellphone</th>
+                        <td>Apple iPhone 14</td>
+                    </tr>
+                    <tr>
+                        <th>Bag</th>
+                        <td>HP Renew laptop bag</td>
                     </tr>
                 </table>
         </main>

@@ -218,19 +218,19 @@ a {
     color: var(--highlight-colour);
 }
 
-table {
+table.gear {
     border-collapse: collapse;
 }
 
-tr {
-    border-bottom: 0.0625 solid var(--secondary-colour);
+table.gear tr {
+    border-bottom: 0.0625rem solid var(--secondary-colour);
 }
 
-tr:last-child {
+table.gear tr:last-child {
     border-bottom: none;
 }
 
-th {
+table.gear th {
     padding-right: 1rem;
 }
 
@@ -347,6 +347,10 @@ th {
 .ul-red {
     border-bottom-style: solid;
     border-bottom-color: #A31621;
+}
+
+.indent-1 {
+    margin-left: 1rem;
 }
 
 @keyframes menu-open {
