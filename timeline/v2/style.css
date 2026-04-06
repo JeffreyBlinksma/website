@@ -1,0 +1,140 @@
+body {
+    background-color: #FFFFDD;
+    color: #000000;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    border-bottom-style: solid;
+    border-bottom-color: #BF0077;
+    margin-bottom: .15em;
+}
+
+.ul-blue {
+    border-bottom-style: solid;
+    border-bottom-color: #008DD5;
+}
+
+.ul-green {
+    border-bottom-style: solid;
+    border-bottom-color: #0B6E4F;
+}
+
+.ul-yellow {
+    border-bottom-style: solid;
+    border-bottom-color: #FFF000;
+}
+
+.ul-orange {
+    border-bottom-style: solid;
+    border-bottom-color: #FFA500;
+}
+
+.ul-red {
+    border-bottom-style: solid;
+    border-bottom-color: #A31621;
+}
+
+h3 {
+    border-bottom-style: dotted;
+    border-bottom-width: 2px;
+}
+
+h3 .name {
+    font-weight: normal;
+    font-size: 0.875em;
+}
+
+h3 .timespan {
+    font-weight: normal;
+    font-size: 0.65em;
+}
+
+.work-entry h3 {
+    margin-bottom: 0.5em;
+}
+
+.work-entry p {
+    margin-top: 0;
+}
+
+.work-entry a:link,
+.work-entry a:hover,
+.work-entry a:visited,
+.work-entry a:active {
+    text-decoration: none;
+    color: #000000;
+}
+
+#main-nav {
+    margin-bottom: .67em;
+}
+
+#music-widget {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 16px;
+    align-items: center;
+    max-width: 400px;
+    text-align: center;
+    border-style: solid;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    border-color: #000000;
+}
+
+#music-widget-img {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    width: 100px;
+    height: 100px;
+}
+
+#music-widget-title {
+    grid-column: 2;
+    grid-row: 1;
+    font-weight: bold;
+}
+
+#music-widget-artist {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#music-widget-album {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#music-widget-title,
+#music-widget-artist,
+#music-widget-album {
+    padding-right: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000000;
+        color: #FFFFDD;
+    }
+
+    .work-entry a:link,
+    .work-entry a:hover,
+    .work-entry a:visited,
+    .work-entry a:active {
+    text-decoration: none;
+    color: #FFFFDD;
+    }
+
+    #music-widget {
+        border-color: #FFFFDD;
+    }
+}
+
+#worldmap {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95vh;
+    max-width: 95vw;
+}
