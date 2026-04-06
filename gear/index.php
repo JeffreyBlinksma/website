@@ -86,5 +86,10 @@
                     </tr>
                 </table>
         </main>
+        <footer>
+            <?php
+                require($_SERVER['DOCUMENT_ROOT']."/parts/footer.php");
+            ?>
+        </footer>
     </body>
 </html>
