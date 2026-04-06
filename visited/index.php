@@ -27,18 +27,25 @@
 
                 let marker = L.icon({
                     iconUrl: '/assets/mapmarker.svg',
-                    iconSize: [48, 48],
-                    iconAnchor: [24, 48],
-                    popupAnchor: [0, 48],
-                    tooltipAnchor: [0, 48]
+                    iconSize: [32, 32],
+                    iconAnchor: [16, 32],
+                    popupAnchor: [16, 0],
+                    tooltipAnchor: [16, 0]
                 });
                 L.Marker.prototype.options.icon = marker;
 
-                let london = L.marker([51.507222, -0.1275]).addTo(map);
-                let rotterdam = L.marker([51.92, 4.48]).addTo(map);
-                let dordrecht = L.marker([51.795833, 4.678333]).addTo(map);
-                let tilburg = L.marker([51.5575, 5.0906]).addTo(map);
-                let shertogensbosch = L.marker([51.688333, 5.3]).addTo(map);
+                let bounds = new L.LatLngBounds();
+
+                const json = <?php echo file_get_contents($_SERVER['DOCUMENT_ROOT']."/visited/places.json", FILE_IGNORE_NEW_LINES); ?>;
+
+                for (const country in json) {
+                    for (const city in json[country]) {
+                        L.marker([json[country][city][0], json[country][city][1]]).addTo(map);
+                        bounds.extend([json[country][city][0], json[country][city][1]]);
+                    }
+                }
+
+                map.fitBounds(bounds);
             </script>
         </main>
         <footer>
