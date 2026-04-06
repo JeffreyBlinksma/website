@@ -6,8 +6,8 @@
     ?>
     <title>Places visited | Jeffrey Blinksma</title>
     <link rel="stylesheet" href="/assets/style.css">
-    <link rel="stylesheet" href="/assets/leaflet/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="/assets/leaflet/leaflet.js" integrity="sha256-hdRVtFIkFfa63EKg59F8kZ0QA0fWuJWL0Nxzj97NbVA=" crossorigin=""></script>
+    <link rel="stylesheet" href="/assets/leaflet/leaflet.css"/>
+    <script src="/assets/leaflet/leaflet.js"></script>
 </head>
     <body>
         <?php
