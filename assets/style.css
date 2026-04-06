@@ -154,7 +154,7 @@ body {
     nav a {
         scale: 1 0;
         height: 0;
-        margin: 0;
+        padding: 0;
     }
     nav a.open {
         animation-duration: 1s;
@@ -162,7 +162,7 @@ body {
         animation-iteration-count: 1;
         scale: 1 1;
         height: 1.125rem;
-        margin: 0.2rem 0;
+        padding: 0.2rem 0;
     }
     nav a.close {
         animation-duration: 1s;
@@ -170,7 +170,7 @@ body {
         animation-iteration-count: 1;
         scale: 1 0;
         height: 0;
-        margin: 0;
+        padding: 0;
     }
     main {
         width: auto;
@@ -353,12 +353,12 @@ th {
     from {
         scale: 1 0;
         height: 0;
-        margin: 0;
+        padding: 0;
     }
     to {
         scale: 1 1;
         height: 1.125rem;
-        margin: 0.2rem 0;
+        padding: 0.2rem 0;
     }
 }
 
@@ -366,11 +366,11 @@ th {
     from {
         scale: 1 1;
         height: 1.125rem;
-        margin: 0.2rem 0;
+        padding: 0.2rem 0;
     }
     to {
         scale: 1 0;
         height: 0;
-        margin: 0;
+        padding: 0;
     }
 }
