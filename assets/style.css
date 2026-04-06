@@ -353,6 +353,11 @@ table.gear th {
     margin-left: 1rem;
 }
 
+#map {
+    width: var(--content-width);
+    height: var(--content-width);
+}
+
 @keyframes menu-open {
     from {
         scale: 1 0;

@@ -17,6 +17,9 @@
         ?>
         <main>
             <h1>Test post</h1>
+            <p class="subtitle"><i>8 March 2026</i></p>
+            <a href="/posts">← back to posts</a>
+            <p>words words words</p>
         </main>
         <footer>
             <?php
