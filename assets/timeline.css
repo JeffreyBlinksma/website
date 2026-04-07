@@ -1,0 +1,31 @@
+.timeline-header {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #FF0000;
+    display: flex;
+    position: sticky;
+    top: 0.5rem;
+    margin: 0.5rem;
+    padding: 1rem;
+    border: none;
+    color: #000000;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 100%
+}
+
+.timeline-header a, .timeline-header p {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #FF0000;
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: #000000;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 100%
+}
+
+.timeline-header a {
+    margin-right: 1rem;
+    font-size: 100%
+}
