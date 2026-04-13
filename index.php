@@ -45,7 +45,7 @@
                     ?>
                 </div>
                 
-                <div class="coverbox">
+                <div class="coverbox" aria-hidden="true">
                     <?php
                         $art = array_diff(scandir($_SERVER['DOCUMENT_ROOT'].'/assets/coverart'), array('..', '.', '.gitignore'));
                         shuffle($art);
