@@ -4,7 +4,7 @@ $posts = [];
 
 $dirs = scandir($_SERVER['DOCUMENT_ROOT'].'/posts');
 foreach ($dirs as $dir) {
-    if (is_dir($_SERVER['DOCUMENT_ROOT'].'/posts/'.$dir) && $dir !== '.' && $dir !== '..' && $dir !== '.template')
+    if (is_dir($_SERVER['DOCUMENT_ROOT'].'/posts/'.$dir) && $dir !== '.' && $dir !== '..' && $dir !== '.template' && file_exists($_SERVER['DOCUMENT_ROOT'].'/posts/'.$dir.'/index.php'))
     {
         $tags = get_meta_tags($_SERVER['DOCUMENT_ROOT'].'/posts/'.$dir.'/index.php');
 
