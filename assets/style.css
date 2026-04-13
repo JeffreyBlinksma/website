@@ -1,3 +1,7 @@
+:root {
+    color-scheme: light dark;
+}
+
 body {
     /* Declare variables */
     --bg-colour: #FFFFDD;
@@ -12,6 +16,14 @@ body {
     color: var(--fg-colour);
     font-family: 'Times New Roman', Times, serif;
     margin: 0 auto;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --bg-colour: #000000;
+        --fg-colour: #FFFFDD;
+        --highlight-colour: #D22B92;
+    }
 }
 
 @media (width >= 61.3125rem) /* add 1rem for scrollbar */ {
