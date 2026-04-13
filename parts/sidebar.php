@@ -26,9 +26,7 @@
             <a href="/posts/">Posts</a>
             <a href="/gear/">Gear</a>
             <a href="/visited/">Places visited</a>
-            <?php
-                // <a href="">Timeline</a>
-            ?>
+            <a href="/timeline/">Timeline</a>
         </nav>
     </section>
     <section class="footer">

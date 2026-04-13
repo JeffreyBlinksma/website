@@ -371,6 +371,20 @@ table.gear th {
     margin-left: 1rem;
 }
 
+.full {
+    width: 100%;
+}
+
+.half-left {
+    float: left;
+    width: 50%;
+}
+
+.half-right {
+    float: right;
+    width: 50%;
+}
+
 @keyframes menu-open {
     from {
         scale: 1 0;
