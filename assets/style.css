@@ -348,6 +348,10 @@ table.gear th {
     margin-top: 0;
 }
 
+abbr, .tooltip {
+    text-decoration: underline dotted;
+}
+
 /* I would like to replace the following with something that automatically iterates through this, but I don't know how yet. */
 .ul-purple {
     border-bottom-style: solid;
