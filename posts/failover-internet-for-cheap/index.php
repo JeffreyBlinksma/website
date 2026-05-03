@@ -25,6 +25,25 @@
             <p>Careful consideration has to be taken when picking a backup internet uplink. Take my customer for example: they are located in an industrial estate, which generally means that our options are generally limited to either very expensive or old technologies. Cable internet, for example, generally isn't available in industrial estates in the Netherlands. <abbr title="Fibre to the Home">FttH</abbr> availability depends on the estate, and is in use as the primary internet uplink already. <abbr title="(Bonded) (Vectored) Very high-speed Digital Subscriber Line 2">(B)(V)VDSL2</abbr> is nearly ubiquitous in the Netherlands, <a href="https://web.archive.org/web/20260503200901/https://www.kpn.com/glasvezelnetwerk/alles-over-glasvezel/glasvezel-vervangt-koper">but is slowly getting decommissioned</a>, and quickly falls off speed-wise with longer local loops. <abbr title="Fibre to the Office">FttO</abbr> is almost always an option, is generally ran deeper in the ground and has a much better SLA, but is also much more expensive and (generally) still has the same single point of failure risks that cheaper connections also have. One of our service providers also provide managed 5G solutions, but these are also quite costly.</p>
             <p>After digging through said service provider's portfolio some more, I discovered that <span class="tooltip" title="Formerly T-Mobile Netherlands">Odido</span> has a cheap <abbr title="Fixed Wireless Access">FWA</abbr> offer based on the lesser-used parts of their 5G cellular network. Although this offer has significant drawbacks for a corporate setting (dynamic IP that changes every 24 hours, limited selection of available ports, very specific modem requirements), it's a fair trade-off compared to the price, with it being €27,50 per month for businesses, and €26,- for personal use. Speeds obviously tends to vary based on reception, having personally seen it vary from 100/30 Mbps at 1.5km from a tower with an indoor modem and no LoS, to 700/100 at 100m from a tower with an outdoor modem and with LoS (rated speed is 300/30).</p>
         </main>
+        <section>
+            <h2>Comments</h2>
+            <script src="https://giscus.app/client.js"
+                    data-repo="JeffreyBlinksma/website"
+                    data-repo-id="R_kgDORbwP2Q"
+                    data-category="Comments"
+                    data-category-id="DIC_kwDORbwP2c4C8RbU"
+                    data-mapping="og:title"
+                    data-strict="0"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="bottom"
+                    data-theme="preferred_color_scheme"
+                    data-lang="en"
+                    data-loading="lazy"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        </section>
         <footer>
             <?php
             require($_SERVER['DOCUMENT_ROOT']."/parts/footer.php");
