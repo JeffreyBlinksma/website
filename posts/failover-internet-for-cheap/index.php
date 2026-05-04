@@ -27,26 +27,26 @@
             <p>Much of the previously mentioned issues also play at my home. Although I do have access to cable internet, it follows the same path as my fibre line. Any digging activity that'd damage this is also likely to damage my cable internet line. VDSL has the same issue, never mind the fact that because my local loop is 4+ km long, I can only get 9/3 Mbps at best, which, for my usecase, is just straight up unacceptable.</p>
             <p>Because of the good experiences that I've had at work with this offer, I decided to order their consumer offering for use at home. Because one of my family members has a subscription at one of Odido's subsidiaries, I actually get a €5 discount, which means it actually only costs me €21 a month. For reference, I pay more for my normal cell service (although that's due to other reasons). Two days later, a box showed up with everything that's needed to get started with Odido Klik&Klaar, namely a Zyxel NR5307 and a SIM-card with the subscription preloaded on it. All I had to do was put the SIM card in, place it near a window and plug it in. After waiting a minute or two for it to boot up, I could connect an Ethernet cable and access the internet. Now the fun can begin.</p>
             <p>The first thing I did was log into the modem and disable the built-in Wi-Fi. Because I'm going to be using this in front of an existing network, my existing access points will be just fine. Because the NR5307 doesn't actually support passing through the WAN IP address, I'm stuck with NAT-in-NAT. This is fine for me, as long as I can pass through my web-based applications, since my PBX is hosted off-site. To make sure this is possible, the first thing I did was change the internal subnet to something that's less likely to overlap with networks that I have to interconnect with. To make sure that my port forwards still work properly, I placed my router in the DMZ. The DMZ on the NR5307 is IP based, so to make sure that this doesn't change, I gave my router a static IP address. This all takes care of being able to reach my services from the 5G uplink.</p>
+            <section>
+                <h2>Comments</h2>
+                <script src="https://giscus.app/client.js"
+                        data-repo="JeffreyBlinksma/website"
+                        data-repo-id="R_kgDORbwP2Q"
+                        data-category="Comments"
+                        data-category-id="DIC_kwDORbwP2c4C8RbU"
+                        data-mapping="og:title"
+                        data-strict="0"
+                        data-reactions-enabled="1"
+                        data-emit-metadata="0"
+                        data-input-position="bottom"
+                        data-theme="preferred_color_scheme"
+                        data-lang="en"
+                        data-loading="lazy"
+                        crossorigin="anonymous"
+                        async>
+                </script>
+            </section>
         </main>
-        <section>
-            <h2>Comments</h2>
-            <script src="https://giscus.app/client.js"
-                    data-repo="JeffreyBlinksma/website"
-                    data-repo-id="R_kgDORbwP2Q"
-                    data-category="Comments"
-                    data-category-id="DIC_kwDORbwP2c4C8RbU"
-                    data-mapping="og:title"
-                    data-strict="0"
-                    data-reactions-enabled="1"
-                    data-emit-metadata="0"
-                    data-input-position="bottom"
-                    data-theme="preferred_color_scheme"
-                    data-lang="en"
-                    data-loading="lazy"
-                    crossorigin="anonymous"
-                    async>
-            </script>
-        </section>
         <footer>
             <?php
             require($_SERVER['DOCUMENT_ROOT']."/parts/footer.php");
