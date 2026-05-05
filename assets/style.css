@@ -7,6 +7,7 @@ body {
     --bg-colour: #FFFFDD;
     --fg-colour: #000000;
     --secondary-colour: #CCCCCC;
+    --teritary-colour: #666666;
     --highlight-colour: #BF0077;
     --sidebar-width: 12.5rem;
     --content-width: 43.75rem;
@@ -23,6 +24,8 @@ body {
         --bg-colour: #000000;
         --fg-colour: #FFFFDD;
         --highlight-colour: #D22B92;
+        --secondary-colour: #AAAAA;
+        --teritary-colour: #CCCCCC;
     }
 }
 
@@ -264,6 +267,10 @@ table.gear th {
     padding-right: 1rem;
 }
 
+figcaption {
+    color: var(--teritary-colour);
+}
+
 .subtitle {
     margin-top: 0;
 }
@@ -393,12 +400,24 @@ abbr, .tooltip {
 
 .half-left {
     float: left;
-    width: 50%;
+    margin-left: 0;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    width: calc(50% - 0.5rem);
 }
 
 .half-right {
     float: right;
-    width: 50%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    width: calc(50% - 0.5rem);
+}
+
+.half-left img, .half-right img {
+    width: 100%;
 }
 
 @keyframes menu-open {

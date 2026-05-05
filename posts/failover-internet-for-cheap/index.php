@@ -33,7 +33,16 @@
             <p>Sure, having the 5G modem as a standalone device is fun and all, but realistically I want to integrate this into the rest of my home network. The main reason that I'm setting this up is to have everything fail over automatically in the background, without requiring any manual user intervention. The only way to realize this is to configure my main router to automatically switch between the two uplinks based on their status.</p>
             <p>For my home router, I make use of a Mikrotik hEX S, placed at the edge of my network. Because my 5G modem isn't physically near my router, it isn't an option for me to plug the modem into a dedicated port on my router. Luckily - unlike, for example, on UniFi gateways - I'm able to use a VLAN subinterface as a WAN connection. After creating the subinterface and adding a DHCP client to it, I was able to receive an IP from the modem and reach the internet over the 5G connection.</p>
             <p>Second on my list is to reconfigure my firewall rules to allow traffic over the newly created interface. Luckily, because I've had to reconfigure my WAN-based firewall routes before, I have them set up to route based off of an interface list, instead of directly off of an interface. This allows me to simply assign the subinterface to the WAN interface group, after which all of my normal firewall policies also apply to the failover internet connection. The only exception to this is my NAT masquerade rule, so I made a second one which applies to the subinterface.</p>
-            <p>Now that <i>allowing</i> traffic to pass over the failover uplink is all done and ready, it's time to tell it <i>when</i> to pass traffic over it.</p>
+            <figure class="half-left">
+                <img src="pppoe-dialout.webp" alt="Mikrotik PPPoE Interface Dial-out configuration, showing the option 'Add Default Route' as disabled.">
+                <figcaption>PPPoE Dial-Out configuration</figcaption>
+            </figure>
+            <p>Now that <i>allowing</i> traffic to pass over the failover uplink is all done and ready, it's time to tell it <i>when</i> to pass traffic over it. Because I use PPPoE on my main internet connection, the first thing that I needed to do was disable the publishing of its default route to the routing table. Normally this is fine, but in this case I need to have finer control over when this route is published, which the default publishing options don't provide.</p>
+            <figure class="half-left">
+                <img src="route-table.webp" alt="Mikrotik IP routing table, showing that the default route for the main uplink has a lower distance than the default route for the secondary uplink.">
+                <figcaption>Modified IP routing table</figcaption>
+            </figure>
+            <p>Next up is configuring my routing table to allow the failover to happen. The first thing I did was re-add the default route that allows traffic to go out over my main internet uplink</p>
             <?php
                 require($_SERVER['DOCUMENT_ROOT']."/parts/comments.php");
             ?>
