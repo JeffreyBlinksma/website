@@ -5,9 +5,9 @@
         require($_SERVER['DOCUMENT_ROOT']."/parts/meta.php");
         ?>
         <meta name="title" property="og:title" content="Failover internet at home">
-        <meta name="description" property="og:description" content="Computer-breaking ICT consultant and student based in the Netherlands.">
+        <meta name="description" property="og:description" content="No one likes coming home to the internet and television being out. How do you prevent that without breaking the bank?">
         <meta property="og:type" content="article">
-        <meta name="date" property="article:published_time" content="2026-05-03">
+        <meta name="date" property="article:published_time" content="2026-05-05">
         <title>Failover internet at home | Jeffrey Blinksma</title>
         <link rel="stylesheet" href="/assets/style.css">
     </head>
@@ -42,7 +42,29 @@
                 <img src="route-table.webp" alt="Mikrotik IP routing table, showing that the default route for the main uplink has a lower distance than the default route for the secondary uplink.">
                 <figcaption>Modified IP routing table</figcaption>
             </figure>
-            <p>Next up is configuring my routing table to allow the failover to happen. The first thing I did was re-add the default route that allows traffic to go out over my main internet uplink</p>
+            <p>Next up is configuring my routing table to allow the failover to happen. The first thing I did was re-add the default route that allows traffic to go out over my main internet uplink, so that this uplink can be used again. The second route I added was a secondary default route over my failover link, but this time I've given it a higher distance than the main route. This makes sure that the primary default route is preferred, since the routing table is read and parsed based on the administrative distance.</p>
+            <p>Since I'm planning on using <i>Netwatch</i> to check if my primary uplink is working, I need to set my routes up to only send this traffic over my primary uplink. I chose 1.1.1.3 as a DNS server to run a query on, so I made a static route for 1.1.1.3/32 over my primary uplink. To make sure that routing this IP over my secondary uplink won't be possible, I also added a "sinkhole" route over the secondary uplink, and gave it a higher distance than the normal one. This makes sure that, in case for any reason whatsoever this IP should be routed over the secondary uplink, this traffic will be blocked.</p>
+            <figure class="half-left">
+                <img src="netwatch-entries.webp" alt="Mikrotik Netwatch rule overview, showing that a single rule called 'cloudflare.com' has been created.">
+                <figcaption>Netwatch rules</figcaption>
+            </figure>
+            <p>Next up is configuring Netwatch. Netwatch is the service that monitors the internet connection, and based on this, runs scripts when the connection is considered "up" and "down". For this detection, I've configured a rule which, every 5 seconds, on the DNS server 1.1.1.3, sends a query for the domain 'cloudflare.com' which has to be returned within 3 seconds.</p>
+            <figure class="half-left">
+                <img src="netwatch-up.webp" alt="Mikrotik Netwatch rule, showing the script that will be executed when the connection is considered 'up'.">
+                <figcaption>Netwatch Up script</figcaption>
+            </figure>
+            <figure class="half-left">
+                <img src="netwatch-down.webp" alt="Mikrotik Netwatch rule, showing the script that will be executed when the connection is considered 'down'.">
+                <figcaption>Netwatch Down script</figcaption>
+            </figure>
+            <p>The <i>Up-</i> and <i>Down-</i>scripts are the most important part of this entire operation: they make sure that, when the primary connection goes down, the routes are switched over to the secondary connection. Because of this, I'll explain them per line:</p>
+            <ol>
+                <li>Adds an entry to the log file that the connection has been disrupted or restored. This is useful for troubleshooting.</li>
+                <li>Searches for the static route that is used by the primary WAN for IPv4-traffic, and enables/disables it. This causes the traffic to fail over to the secondary route.</li>
+                <li>Because my secondary uplink doesn't support IPv6, I need to inform my devices that the internet isn't reachable at all using IPv6. Since I'm not (currently) using multiple IPv6 subnets internally, the easiest way for me to accomplish this is to revoke my router's status as default route.</li>
+            </ol>
+            <h2>Conclusion</h2>
+            <p>By making use of the 5G home internet offering that Odido has, together with some simple configuration changes on my router, I've managed to make my home internet more resistant to outages for just over €20 a month. This means that, during an outage, I'm able to relax and enjoy my (little) free time, without having to worry about the impact of the disruption on my household.</p>
             <?php
                 require($_SERVER['DOCUMENT_ROOT']."/parts/comments.php");
             ?>
