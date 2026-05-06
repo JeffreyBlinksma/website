@@ -65,6 +65,9 @@ body {
         width: var(--content-width);
         height: var(--content-width);
     }
+    .half-left, .half-right {
+        max-width: calc(50% - 0.5rem);
+    }
 }
 
 @media (45.75rem <= width < 61.3125rem)  {
@@ -131,6 +134,9 @@ body {
     #map {
         width: var(--content-width);
         height: var(--content-width);
+    }
+    .half-left, .half-right {
+        max-width: calc(50% - 0.5rem);
     }
 }
 
@@ -225,6 +231,9 @@ body {
     #map {
         width: auto;
         height: calc(100svh - 2.25rem - 2.5625rem - 2.8125rem)
+    }
+    .half-left, .half-right {
+        max-width: 100%;
     }
 }
 
@@ -359,6 +368,10 @@ abbr, .tooltip {
     text-decoration: underline dotted;
 }
 
+#comments {
+    clear: both;
+}
+
 /* I would like to replace the following with something that automatically iterates through this, but I don't know how yet. */
 .ul-purple {
     border-bottom-style: solid;
@@ -401,23 +414,21 @@ abbr, .tooltip {
 .half-left {
     float: left;
     margin-left: 0;
-    margin-top: 1rem;
+    margin-top: 0;
     margin-right: 1rem;
     margin-bottom: 1rem;
-    width: calc(50% - 0.5rem);
 }
 
 .half-right {
     float: right;
     margin-left: 1rem;
-    margin-top: 1rem;
+    margin-top: 0;
     margin-right: 0;
     margin-bottom: 1rem;
-    width: calc(50% - 0.5rem);
 }
 
 .half-left img, .half-right img {
-    width: 100%;
+    max-width: 100%;
 }
 
 @keyframes menu-open {

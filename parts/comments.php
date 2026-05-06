@@ -1,4 +1,4 @@
-<section>
+<section id="comments">
     <h2>Comments</h2>
     <script src="https://giscus.app/client.js"
             data-repo="JeffreyBlinksma/website"
