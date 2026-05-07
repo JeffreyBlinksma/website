@@ -4,13 +4,14 @@ on:
   push:
     branches:
       - staging
+      - master
   workflow_dispatch:
 
 jobs:
   deploy-staging:
     name: "Deploy staging branch"
     runs-on: ubuntu-latest
-    environment: staging
+    environment: ${{ github.ref_name }}
     steps:
       - name: "Checkout"
         uses: actions/checkout@v6
