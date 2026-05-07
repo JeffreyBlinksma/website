@@ -4,7 +4,7 @@ $posts = [];
 
 $dirs = scandir($_SERVER['DOCUMENT_ROOT'].'/posts');
 foreach ($dirs as $dir) {
-    if (is_dir($_SERVER['DOCUMENT_ROOT'].'/posts/'.$dir) && $dir !== '.' && $dir !== '..')
+    if (is_dir($_SERVER['DOCUMENT_ROOT'].'/posts/'.$dir) && $dir !== '.' && $dir !== '..' && $dir !== '.template' && file_exists($_SERVER['DOCUMENT_ROOT'].'/posts/'.$dir.'/index.php'))
     {
         $tags = get_meta_tags($_SERVER['DOCUMENT_ROOT'].'/posts/'.$dir.'/index.php');
 
@@ -43,11 +43,7 @@ if ($posts != [])
 }
 else
 {
-    echo "<p>There's nothing here yet 😔</p>";
+    echo "<p>There's nothing here 😔</p>";
 }
-
-
-
-
 ?>
 </section>

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <?php
-            require("parts/meta.php");
+            require($_SERVER['DOCUMENT_ROOT']."/parts/meta.php");
         ?>
         <meta property="og:title" content="Jeffrey Blinksma">
         <meta property="og:description" content="Computer-breaking ICT consultant and student based in the Netherlands.">
@@ -25,11 +25,11 @@
             }
         </script>
         <title>Jeffrey Blinksma</title>
-        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="/assets/style.css">
     </head>
     <body>
         <?php
-            require("parts/sidebar.php");
+            require($_SERVER['DOCUMENT_ROOT']."/parts/sidebar.php");
         ?>
         <main>
             <h1>Hi! I'm Jeff.</h1>
@@ -41,19 +41,25 @@
                     <h2>Posts</h2>
                     <h3>Personal and work-related guides, notes and projects</h3>
                     <?php
-                        require("parts/posts.php");
+                        require($_SERVER['DOCUMENT_ROOT']."/parts/posts.php");
                     ?>
                 </div>
                 
-                <div class="coverbox">
-                    <img src="https://coverartarchive.org/release/02d831fa-f0c7-43f6-952b-f1e0e2c846be/front-250">
-                    <img src="https://coverartarchive.org/release/02d831fa-f0c7-43f6-952b-f1e0e2c846be/front-250">
-                    <img src="https://coverartarchive.org/release/02d831fa-f0c7-43f6-952b-f1e0e2c846be/front-250">
-                    <img src="https://coverartarchive.org/release/02d831fa-f0c7-43f6-952b-f1e0e2c846be/front-250">
-                    <img src="https://coverartarchive.org/release/02d831fa-f0c7-43f6-952b-f1e0e2c846be/front-250">
-                    <img src="https://coverartarchive.org/release/02d831fa-f0c7-43f6-952b-f1e0e2c846be/front-250">
+                <div class="coverbox" aria-hidden="true">
+                    <?php
+                        $art = array_diff(scandir($_SERVER['DOCUMENT_ROOT'].'/assets/coverart'), array('..', '.', '.gitignore'));
+                        shuffle($art);
+                        foreach ($art as $file) {
+                            echo "<img src='/assets/coverart/".$file."' alt='' loading='lazy'>";
+                        }
+                    ?>
                 </div>
             </div>
         </main>
+        <footer>
+            <?php
+                require($_SERVER['DOCUMENT_ROOT']."/parts/footer.php");
+            ?>
+        </footer>
     </body>
 </html>

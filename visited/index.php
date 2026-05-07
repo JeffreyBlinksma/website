@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <?php
+    require($_SERVER['DOCUMENT_ROOT']."/parts/meta.php");
+    ?>
+    <title>Places visited | Jeffrey Blinksma</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/leaflet/leaflet.css"/>
+    <script src="/assets/leaflet/leaflet.js"></script>
+</head>
+    <body>
+        <?php
+            require($_SERVER['DOCUMENT_ROOT']."/parts/sidebar.php");
+        ?>
+        <main>
+            <h1>Places I've visited</h1>
+
+            <div id="map"></div>
+            <script>
+                let map = L.map('map').setView([51.505, -0.09], 13);
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+                map.attributionControl.addAttribution('<a href="https://github.com/gorango/glyphs">gorango/glyphs</a>')
+
+                let marker = L.icon({
+                    iconUrl: '/assets/mapmarker.svg',
+                    iconSize: [32, 32],
+                    iconAnchor: [16, 32],
+                    popupAnchor: [16, 0],
+                    tooltipAnchor: [16, 0]
+                });
+                L.Marker.prototype.options.icon = marker;
+
+                let bounds = new L.LatLngBounds();
+
+                const json = <?php echo file_get_contents($_SERVER['DOCUMENT_ROOT']."/visited/places.json", FILE_IGNORE_NEW_LINES); ?>;
+
+                for (const country in json) {
+                    for (const city in json[country]) {
+                        L.marker([json[country][city][0], json[country][city][1]]).addTo(map);
+                        bounds.extend([json[country][city][0], json[country][city][1]]);
+                    }
+                }
+
+                function fit() {
+                    map.fitBounds(bounds);
+                }
+
+                fit();
+
+                map.addEventListener('resize', fit);
+            </script>
+        </main>
+        <footer>
+            <?php
+                require($_SERVER['DOCUMENT_ROOT']."/parts/footer.php");
+            ?>
+        </footer>
+    </body>
+</html>
