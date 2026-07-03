@@ -12,9 +12,5 @@
 </Files>
 Redirect temp /koelkast/ https://forms.office.com/Pages/ResponsePage.aspx?id=EwCLUogMMkiTCIfYoyR7JdnmPH7xNPRAlaip3OxE7HlUOEdDVjZNM09RQkY5NlJZU1Y3SFUzUzBVMS4u&r3fe042b365c2419480a1e57b741e07ab=1
 
-
-<Proxy "https://tile.openstreetmap.org">
-    ProxySet timeout=15
-</Proxy>
 RewriteEngine On
-RewriteRule ^/visites/tiles/([0-9]+)/([0-9]+)/([0-9]+).png$ https://tile.openstreetmap.org/$1/$2/$3.png [P]
+RewriteRule ^visited/tiles/([0-9]+)/([0-9]+)/([0-9]+)\.png$ https://tile.openstreetmap.org/$1/$2/$3.png [P]
