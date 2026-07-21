@@ -1,6 +1,7 @@
 {
     "require": {
         "guzzlehttp/guzzle": "^7.10",
-        "composer/ca-bundle": "^1.5"
+        "composer/ca-bundle": "^1.5",
+        "woltlab/webp-exif": "0.1.4"
     }
 }

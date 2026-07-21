@@ -26,6 +26,7 @@
             <a href="/posts/">Posts</a>
             <a href="/gear/">Gear</a>
             <a href="/visited/">Places visited</a>
+            <a href="/photos/">Photos</a>
             <a href="/timeline/">Timeline</a>
         </nav>
     </section>

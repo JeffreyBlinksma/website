@@ -372,6 +372,20 @@ abbr, .tooltip {
     clear: both;
 }
 
+#gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    column-gap: 0.25rem;
+    row-gap: 0.25rem;
+    margin-top: 1rem;
+}
+
+#gallery a img {
+    width: 100%;
+    display: block;
+}
+
 /* I would like to replace the following with something that automatically iterates through this, but I don't know how yet. */
 .ul-purple {
     border-bottom-style: solid;
