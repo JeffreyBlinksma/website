@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule ^/$ /photos/scotland/ [R=302]
+RewriteRule ^$ /photos/scotland/ [R=302]
