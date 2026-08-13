@@ -1,1 +1,1 @@
-RedirectMatch 302 ^/$ /photos/scotland/
+Redirect 302 /photos/ /photos/scotland/
