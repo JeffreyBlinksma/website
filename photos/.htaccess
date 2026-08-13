@@ -1,1 +1,2 @@
+RewriteEngine On
 RewriteRule ^/photos/$ /photos/scotland/ [R=302,L]
